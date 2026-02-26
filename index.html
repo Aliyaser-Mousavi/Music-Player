@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Music Player</title>
+    <title>Advanced Music Player</title>
     <link rel="icon" type="image/png" href="favicon.png" />
     <link
       rel="stylesheet"
@@ -13,29 +13,51 @@
   </head>
   <body>
     <div class="player-container">
-      <!-- Song -->
+      <!-- Album -->
       <div class="img-container">
         <img src="img/jacinto-1.jpg" alt="Album Art" />
       </div>
-      <h2 id="title"></h2>
-      <h3 id="artist"></h3>
-      <audio src="music/jacinto-1.mp3"></audio>
-      <!-- Progress Bar -->
-      <div class="progress-container" id="progress-container">
-        <div class="progress" id="progress"></div>
+      <h2 id="title">Title</h2>
+      <h3 id="artist">Artist</h3>
+
+      <!-- Progress -->
+      <div class="progress-wrapper">
+        <div class="progress-container" id="progress-container">
+          <div class="progress" id="progress"></div>
+          <div class="progress-tooltip" id="progress-tooltip">0:00</div>
+        </div>
         <div class="duration-wrapper">
           <span id="current-time">0:00</span>
-          <span id="duration">2:06</span>
+          <span id="duration">0:00</span>
         </div>
       </div>
+
       <!-- Controls -->
       <div class="player-controls">
+        <i class="fas fa-random" id="shuffle" title="Shuffle"></i>
         <i class="fas fa-backward" id="prev" title="Previous"></i>
         <i class="fas fa-play main-button" id="play" title="Play"></i>
         <i class="fas fa-forward" id="next" title="Next"></i>
+        <i class="fas fa-redo" id="repeat" title="Repeat"></i>
       </div>
+
+      <!-- Volume -->
+      <div class="volume-wrapper">
+        <i class="fas fa-volume-up" id="mute" title="Mute"></i>
+        <input
+          type="range"
+          id="volume"
+          min="0"
+          max="100"
+          value="80"
+          title="Volume"
+        />
+        <span id="volume-tooltip">80%</span>
+      </div>
+
+      <audio src="music/jacinto-1.mp3"></audio>
     </div>
-    <!-- Script -->
+
     <script src="script.js"></script>
   </body>
 </html>
